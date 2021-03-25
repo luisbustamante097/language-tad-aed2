@@ -1,5 +1,10 @@
-# language-tad-aed2
+# Sintaxis para escribir TADs en Atom
 Un intento de crear la sintaxis usada en AED2-FCEN-UBA para la escritura de TADs en Atom.
+
+
+![alt text](https://i.imgur.com/kdJCyRE.png "Es un TAD cualquiera que tenia guardado de cuando la curse (?")
+
+
 **(Disclaimer)**
 - Este paquete fue creado solo con la intención de tener una mejor visualización de la escritura en computadora y tiene tantas fallas como uno se puede imaginar dado que creé la sintaxis desde cero sin ningún conocimiento en el tema.
 - No recomiendo la escritura de los ejercicios en computadora porque nada gana al buen lápiz y papel, pero dado el contexto de virtualidad en el que se creó este paquete (1er cuatrimestre 2021) puede serle útil a las personas que les gusta llevar todo en la compu. (esta recomendación viene a consecuencia de que en el contexto de presencialidad uno se puede mal acostumbrar a hacer los ejercicios en la computadora, lo cual juega en contra a la hora de un examen presencial).

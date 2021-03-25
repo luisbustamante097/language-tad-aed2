@@ -145,8 +145,8 @@ repository:
         match: '\".*?\"'
     }
     functions:{
-        comment: 'Highligting de nombres de funciones varias'
-        match: '(?:\\(|\ |\t|\\+|\-|)([A-Za-z0-9\_\?\#]+?)(?=(\\(|\ \\())'
+        comment: 'Highligting de nombres de funciones varias' #TODO: No puedo hacer que ande la letra "ñ"
+        match: '(?:\\(|\ |\t|\\+|\-|)([A-Za-z0-9\_\?\#\ñ]+?)(?=(\\(|\ \\())'
         captures:
             1: name: 'entity.name.function.tad'
     }
@@ -169,7 +169,7 @@ repository:
         endCaptures:
             0: name: 'punctuation.section.brackets.end.tad'
         patterns:[
-            match: '^([0-9]+?)(?=\\])' #TODO: arreglar que no toma los numeros con ^
+            match: '^([0-9]+?)(?=\\])' #TODO: arreglar que no toma los numeros con "^"
             name: 'constant.numeric.tad'
         ]
     }
