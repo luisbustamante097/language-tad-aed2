@@ -2,7 +2,7 @@
 Un intento de crear la sintaxis usada en AED2-FCEN-UBA para la escritura de TADs en Atom.
 
 
-![alt text](https://i.imgur.com/kdJCyRE.png "Es un TAD cualquiera que tenia guardado de cuando la curse (?")
+![alt text](https://i.imgur.com/0U6AxBG.png "Es un TAD cualquiera que tenia guardado de cuando la curse (?")
 
 
 **(Disclaimer)**
