@@ -1,0 +1,230 @@
+#Todos los snippets tienen que tener un duplicado con el simbolo \ escapeado
+'.source.tad':
+    '\\∨':
+      'prefix': '\\lor'
+      'body': '∨'
+    '\\∨L':
+      'prefix': '\\oluego'
+      'body': '∨L'
+    '\\∧':
+      'prefix': '\\land'
+      'body': '∧'
+    '\\∧L':
+      'prefix': '\\yLuego'
+      'body': '∧L'
+    '\\¬':
+      'prefix': '\\not'
+      'body': '¬'
+    '\\∀':
+      'prefix': '\\forall'
+      'body': '∀'
+    '\\∃':
+      'prefix': '\\exist'
+      'body': '∃'
+    '\\∄':
+      'prefix': '\\notexist'
+      'body': '∄'
+    '\\→':
+      'prefix': '\\implica'
+      'body': '→'
+    '\\→L':
+      'prefix': '\\impluego'
+      'body': '→L'
+    '\\↔':
+      'prefix': '\\iff'
+      'body': '↔'
+    '\\∴':
+      'prefix': '\\porlotanto'
+      'body': '∴'
+    '\\⋂':
+      'prefix': '\\genintersection'
+      'body': '⋂'
+    '\\⋃':
+      'prefix': '\\genunion'
+      'body': '⋃'
+    '\\∩':
+      'prefix': '\\intersection'
+      'body': '∩'
+    '\\∪':
+      'prefix': '\\union'
+      'body': '∪'
+    '\\⊆':
+      'prefix': '\\estaincluidooesigual'
+      'body': '⊆'
+    '\\⊂':
+      'prefix': '\\estaincluido'
+      'body': '⊂'
+    '\\⊄':
+      'prefix': '\\noestaincluido'
+      'body': '⊄'
+    '\\∈':
+      'prefix': '\\in'
+      'body': '∈'
+    '\\∉':
+      'prefix': '\\notin'
+      'body': '∉'
+    '\\ℕ':
+      'prefix': '\\natural'
+      'body': 'ℕ'
+    '\\ℤ':
+      'prefix': '\\entero'
+      'body': 'ℤ'
+    '\\ℚ':
+      'prefix': '\\racional'
+      'body': 'ℚ'
+    '\\ℝ':
+      'prefix': '\\real'
+      'body': 'ℝ'
+    '\\ℂ':
+      'prefix': '\\complejo'
+      'body': 'ℂ'
+    '\\×':
+      'prefix': '\\cross'
+      'body': '×'
+    '\\∞':
+      'prefix': '\\infinito'
+      'body': '∞'
+    '\\↦':
+      'prefix': '\\funcion'
+      'body': '↦'
+    '\\≡':
+      'prefix': '\\equivale'
+      'body': '≡'
+    '\\Ø':
+      'prefix': '\\emptyset'
+      'body': 'Ø'
+    '\\β':
+      'prefix': '\\beta'
+      'body': 'β'
+    '\\α':
+      'prefix': '\\alpha'
+      'body': 'α'
+    '\\•':
+      'prefix': '\\dot'
+      'body': '•'
+    '\\◦':
+      'prefix': '\\emptydot'
+      'body': '◦'
+    '\\π':
+      'prefix': '\\pi'
+      'body': 'π'
+    '\\←':
+      'prefix': '\\gets'
+      'body': '←'
+    '\\≤':
+      'prefix': '\\leq'
+      'body': '≤'
+    '∨':
+      'prefix': 'lor'
+      'body': '∨'
+    '∨L':
+      'prefix': 'oluego'
+      'body': '∨L'
+    '∧':
+      'prefix': 'land'
+      'body': '∧'
+    '∧L':
+      'prefix': 'yLuego'
+      'body': '∧L'
+    '¬':
+      'prefix': 'not'
+      'body': '¬'
+    '∀':
+      'prefix': 'forall'
+      'body': '∀'
+    '∃':
+      'prefix': 'exist'
+      'body': '∃'
+    '∄':
+      'prefix': 'notexist'
+      'body': '∄'
+    '→':
+      'prefix': 'implica'
+      'body': '→'
+    '→L':
+      'prefix': 'impluego'
+      'body': '→L'
+    '↔':
+      'prefix': 'iff'
+      'body': '↔'
+    '∴':
+      'prefix': 'porlotanto'
+      'body': '∴'
+    '⋂':
+      'prefix': 'genintersection'
+      'body': '⋂'
+    '⋃':
+      'prefix': 'genunion'
+      'body': '⋃'
+    '∩':
+      'prefix': 'intersection'
+      'body': '∩'
+    '∪':
+      'prefix': 'union'
+      'body': '∪'
+    '⊆':
+      'prefix': 'estaincluidooesigual'
+      'body': '⊆'
+    '⊂':
+      'prefix': 'estaincluido'
+      'body': '⊂'
+    '⊄':
+      'prefix': 'noestaincluido'
+      'body': '⊄'
+    '∈':
+      'prefix': 'in'
+      'body': '∈'
+    '∉':
+      'prefix': 'notin'
+      'body': '∉'
+    'ℕ':
+      'prefix': 'natural'
+      'body': 'ℕ'
+    'ℤ':
+      'prefix': 'entero'
+      'body': 'ℤ'
+    'ℚ':
+      'prefix': 'racional'
+      'body': 'ℚ'
+    'ℝ':
+      'prefix': 'real'
+      'body': 'ℝ'
+    'ℂ':
+      'prefix': 'complejo'
+      'body': 'ℂ'
+    '×':
+      'prefix': 'cross'
+      'body': '×'
+    '∞':
+      'prefix': 'infinito'
+      'body': '∞'
+    '↦':
+      'prefix': 'funcion'
+      'body': '↦'
+    '≡':
+      'prefix': 'equivale'
+      'body': '≡'
+    'Ø':
+      'prefix': 'emptyset'
+      'body': 'Ø'
+    'β':
+      'prefix': 'beta'
+      'body': 'β'
+    'α':
+      'prefix': 'alpha'
+      'body': 'α'
+    '•':
+      'prefix': 'dot'
+      'body': '•'
+    '◦':
+      'prefix': 'emptydot'
+      'body': '◦'
+    'π':
+      'prefix': 'pi'
+      'body': 'π'
+    '←':
+      'prefix': 'gets'
+      'body': '←'
+    '≤':
+      'prefix': 'leq'
+      'body': '≤'

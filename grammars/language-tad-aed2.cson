@@ -1,0 +1,175 @@
+scopeName: 'source.tad'
+name: 'TAD'
+fileTypes: [ 'tad' ]
+limitLineLength: false
+
+patterns: [
+    {
+        comment: 'Declaraciones de TADs auxiliares'
+        match: '((?:\w*TAD\*?))(\ .*?\ )(es)(\ .*?(?=(\ |\n|\<|\\(|\{)))'
+        captures:
+            1: name: 'markup.bold.tad'              # "TAD"
+            2: name: 'variable.other.tad'           # Nombre de TAD
+            3: name: 'markup.bold.tad'              # "es"
+            4: name: 'storage.modifier.tad'         # Tipo de TAD
+    }
+    {
+        comment: 'Highligting para Tupla<...> en declaraciones'
+        name: 'meta.angle-brackets'
+        begin: '\<|\\('
+        end: '\>|\\)'
+        beginCaptures:
+            0: name: 'punctuation.section.parens.begin.tad'
+        endCaptures:
+            0: name: 'punctuation.section.parens.end.tad'
+        patterns:[{
+            match: '[A-Z].*?(\ |(?=\\)))'
+            name: 'storage.modifier.tad'    # Palabra con mayuscula en la 1er letra
+            }]
+    }
+    {
+        comment: 'Declaracion de TAD principal'
+        match: '((?:\w*TAD\*?))(\ .*?\n)'
+        captures:
+            1: name: 'markup.bold.tad'      # "TAD"
+            2: name: 'variable.other.tad'   # Nombre de TAD
+    }
+    {
+        comment: 'Palabras clave de los TADS'
+        name: 'markup.bold.tad'
+        match: '(?i)(\w*(?:Igualdad Observacional|IgObs|Ig Obs|EXTIENDE|EXPORTA|IMPORTA|GENEROS|GENERADORES|Observadores Basicos|OBSERVADORES|Otras Op|OtrasOp|Otras Operaciones)(\ |\:|\t|\n))'
+    }
+    {
+        comment: 'Palabras clave de los TADS (Extra)'
+        name: 'markup.bold.tad'
+        match: '((\t|\n)(?:|USA|usa|GEN|gen|OBS|obs)\:)'
+    }
+    {
+        comment: 'Parte de Axiomas'
+        begin: '(?i)\w*AXIOMAS\:'
+        beginCaptures:
+            0: name: 'markup.bold.tad'
+        end: 'Fin\ TAD'
+        endCaptures:
+            0: name: 'markup.bold.tad'
+        patterns:[
+            {
+            name: 'string.quoted.double.tad'
+            match: '\".*?\"'
+            }
+            { include: '#conditionals' }
+            { include: '#comment' }
+            { include: '#strings' }
+            { include: '#functions' }
+            { include: '#constants' }
+            { include: '#constants_aux' }
+            { include: '#arrays' }
+            # {     #Lo dejo de usar ya que encontre una forma de pintar todas las funciones
+            #     comment: 'Highligting del nombre de la funcion inicial y el signo "="'
+            #     match: '(^(?:\t\t))([A-Za-z]+?)(?=\\()(.+?(?=\=))(\=)'
+            #     captures:
+            #         # 2: name: 'entity.name.function.tad' #
+            #         4: name: 'variable.language.tad' #
+            # }
+            {
+                comment: 'Highligting para signo "="'
+                match: '(\=|\≡)'
+                name: 'variable.language.tad'
+            }
+            {
+                comment: 'Atributos para los tipo Tupla'
+                match: '(?:\\..*?)([a-z]+)'
+                captures:
+                    1: name: 'variable.parameter.tad'
+            }
+        ]
+    }
+    {
+        comment: 'Aridad de Funciones (Nombre de funcion)'
+        match: '(^(?:\t\t))(.*?\:)'
+        name: 'entity.name.function.tad'
+    }
+    {
+        comment: 'Highligting para signo "x"'
+        name: 'variable.language.tad'
+        match: '(?:\ |\t)(?:x|\×)(?:\ |\t)'
+    }
+    {
+        comment: 'Highligting para signo "->"'
+        name: 'variable.language.tad'
+        match: '((?:\-\>|\↦))'
+    }
+    {
+        comment: "Llaves para distintos usos"
+        begin: '\{'
+        beginCaptures:
+            0: name: 'punctuation.section.parens.begin.tad'
+        end: '\}'
+        endCaptures:
+            0: name: 'punctuation.section.parens.end.tad'
+        patterns:[
+            { include: '#functions' }
+            { include: '#constants' }
+            { include: '#strings' }
+            { include: '#constants' }
+            { include: '#constants_aux' }
+            { include: '#arrays' }
+            {
+                name: 'constant.language'
+                match: '([A-Z]+?)'
+            }
+        ]
+    }
+    { include: '#comment' }
+    { include: '#conditionals' }
+    { include: '#strings' }
+    { include: '#constants' }
+    { include: '#constants_aux' }
+    { include: '#arrays' }
+]
+
+repository:
+    conditionals:{
+        comment: 'Palabras clave del tipo Bool'
+        name: 'keyword.control.conditional.tad'
+        match: '(?i)((\t|\ |\n)(IF|FI|ELSE|ELIF|THEN)(\t|\ |\n))'
+    }
+    comment:{
+        comment: 'Comentario del codigo'
+        name: 'comment.line.tad'
+        match: '//.*$'
+    }
+    strings:{
+        comment: 'Strings (palabras entre comillas)'
+        name: 'string.quoted.double.tad'
+        match: '\".*?\"'
+    }
+    functions:{
+        comment: 'Highligting de nombres de funciones varias'
+        match: '(?:\\(|\ |\t|\\+|\-|)([A-Za-z0-9\_\?\#]+?)(?=(\\(|\ \\())'
+        captures:
+            1: name: 'entity.name.function.tad'
+    }
+    constants:{
+        comment: 'Constantes'
+        name: 'constant.language.tad'
+        match: '(?i)(\\b(true|false|none|\Ø|nil|0)\\b)'
+    }
+    constants_aux:{
+        comment: 'Constante <>'
+        name: 'constant.language.tad'
+        match: '\<\>'
+    }
+    arrays:{
+        comment: 'Arrays'
+        begin: '\\['
+        end: '\\]'
+        beginCaptures:
+            0: name: 'punctuation.section.brackets.begin.tad'
+        endCaptures:
+            0: name: 'punctuation.section.brackets.end.tad'
+        patterns:[
+            match: '^([0-9]+?)(?=\\])' #TODO: arreglar que no toma los numeros con ^
+            name: 'constant.numeric.tad'
+        ]
+    }

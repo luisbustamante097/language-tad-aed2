@@ -1,0 +1,19 @@
+{
+    "bundleDependencies": false,
+    "deprecated": false,
+    "name": "language-tad-aed2",
+    "version": "0.1.0",
+    "description": "Un intento de crear la sintaxis usada en AED2-FCEN-UBA para la escritura de TADs",
+    "repository": "https://github.com/user/package-name",
+    "keywords": [
+        "tad",
+        "syntax",
+        "highlighting",
+        "grammar"
+    ],
+    "license": "MIT",
+    "bugs": "https://github.com/user/package-name/issues",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    }
+}
