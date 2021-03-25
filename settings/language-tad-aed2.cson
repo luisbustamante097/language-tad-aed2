@@ -1,3 +1,4 @@
 '.source.tad':
   'editor':
       'commentStart': '// '
+      'tabType': "hard"
