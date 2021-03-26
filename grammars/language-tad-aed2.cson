@@ -4,6 +4,12 @@ fileTypes: [ 'tad' ]
 limitLineLength: false
 
 patterns: [
+    { include: '#comment' }
+    { include: '#conditionals' }
+    { include: '#strings' }
+    { include: '#constants' }
+    { include: '#constants_aux' }
+    { include: '#arrays' }
     {
         comment: 'Declaraciones de TADs auxiliares'
         match: '((?:\w*TAD\*?))(\ .*?\ )(es)(\ .*?(?=(\ |\n|\<|\\(|\{)))'
@@ -73,7 +79,7 @@ patterns: [
             # }
             {
                 comment: 'Highligting para signo "="'
-                match: '\b(\=|\≡)\b'
+                match: '(\ |\t|\n)(\=|\≡)(?=(\ |\t))'
                 name: 'variable.language.tad'
             }
             {
@@ -86,7 +92,7 @@ patterns: [
     }
     {
         comment: 'Aridad de Funciones (Nombre de funcion)'
-        match: '(^(?:\t\t))(.*?\:)'
+        match: '(^(?:\t\t))(?!\/\/)(.*?\:)'     #TODO: Esta parchado para que no pinte los comentarios con ":"
         name: 'entity.name.function.tad'
     }
     {
@@ -120,12 +126,6 @@ patterns: [
             }
         ]
     }
-    { include: '#comment' }
-    { include: '#conditionals' }
-    { include: '#strings' }
-    { include: '#constants' }
-    { include: '#constants_aux' }
-    { include: '#arrays' }
 ]
 
 repository:
