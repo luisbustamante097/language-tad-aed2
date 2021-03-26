@@ -73,7 +73,7 @@ patterns: [
             # }
             {
                 comment: 'Highligting para signo "="'
-                match: '(\=|\≡)'
+                match: '\b(\=|\≡)\b'
                 name: 'variable.language.tad'
             }
             {
