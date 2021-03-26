@@ -114,6 +114,9 @@
     '\\≤':
       'prefix': '\\leq'
       'body': '≤'
+    '\\≥':
+      'prefix': '\\geq'
+      'body': '≥'
     '∨':
       'prefix': 'lor'
       'body': '∨'
@@ -228,3 +231,12 @@
     '≤':
       'prefix': 'leq'
       'body': '≤'
+    '≥':
+      'prefix': 'geq'
+      'body': '≥'
+    'if Condition':
+      'prefix': 'if'
+      'body': 'if ${1:condicion} then\n\t${2:resultado}\nelse\n\t${3:sino}\nfi'
+    'if Condition inline':
+      'prefix': 'ifthen'
+      'body': 'if ${1:condicion} then ${2:resultado} else ${3:sino} fi'
