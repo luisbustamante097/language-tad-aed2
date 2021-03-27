@@ -240,3 +240,24 @@
     'if Condition inline':
       'prefix': 'ifthen'
       'body': 'if ${1:condicion} then ${2:resultado} else ${3:sino} fi'
+    'esqueletoTad':
+      'prefix': 'esqueletoTad'
+      'body': """
+TAD ${1:NombreTad}
+	Igualdad Observacional:
+	Generos: ${2:nombreTad}
+	Exporta: ${2:nombreTad}, observadores, generadores, 
+	Usa: ${3:Bool, Nat}
+	
+	Observadores Basicos:
+		${4:obs?:	nombreTad t × nat n	-> bool 	\\{ n ≥ 1 \\}}
+	Generadores:
+		${5:nil:			-> nombreTad}
+	Otras Operaciones:
+		${6:otra:	nombreTad t × nat n	-> bool 	\\{ n ≥ 1 \\}}
+	Axiomas:
+		${7:obs?(nil)	= 	true
+		otra(t, n)	= 	n
+		...}
+Fin TAD
+		"""

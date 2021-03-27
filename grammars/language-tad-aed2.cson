@@ -48,7 +48,7 @@ patterns: [
     {
         comment: 'Palabras clave de los TADS (Extra)'
         name: 'markup.bold.tad'
-        match: '((\t|\n)(?:|USA|usa|GEN|gen|OBS|obs)\:)'
+        match: '((\t|\n)(?:|USA|usa|Usa|GEN|gen|Gen|OBS|obs|Obs)\:)'
     }
     {
         comment: 'Parte de Axiomas'
@@ -110,9 +110,11 @@ patterns: [
         begin: '\{'
         beginCaptures:
             0: name: 'punctuation.section.parens.begin.tad'
-        end: '\}'
+            0: name: 'keyword.control.conditional.tad'
+        end: '\}\n'
         endCaptures:
             0: name: 'punctuation.section.parens.end.tad'
+            0: name: 'keyword.control.conditional.tad'
         patterns:[
             { include: '#functions' }
             { include: '#constants' }
@@ -120,10 +122,6 @@ patterns: [
             { include: '#constants' }
             { include: '#constants_aux' }
             { include: '#arrays' }
-            {
-                name: 'constant.language'
-                match: '([A-Z]+?)'
-            }
         ]
     }
 ]
@@ -146,7 +144,7 @@ repository:
     }
     functions:{
         comment: 'Highligting de nombres de funciones varias' #TODO: No puedo hacer que ande la letra "ñ"
-        match: '(?:\\(|\ |\t|\\+|\-|)([A-Za-z0-9\_\?\#\ñ]+?)(?=(\\(|\ \\())'
+        match: '(?:\\(|\ |\t|\\+|\-|)([A-Za-z0-9\_\?\#\ñ\Ø]+?)(?=(\\(|\ \\())'
         captures:
             1: name: 'entity.name.function.tad'
     }
