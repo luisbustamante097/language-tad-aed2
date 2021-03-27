@@ -71,3 +71,10 @@ Simbolo | Atajo
 π   | \pi
 ←   | \gets
 ≤   | \leq
+≥   | \geq
+
+Ademas de la lista de simbolos se puede usar los snippets para insertar:
+- Esqueleto de `IF THEN ELSE FI`: solo con escribir `if` o `ifthen` para la version inline.
+![Imagen](./data/if_example.gif "Ejemplo de uso")
+- Esqueleto de TAD: solo con escribir `esqueloTad` se puede obtener un modelo basico de TAD para rellenar.
+![Imagen](./data/esqueleto_example.gif "Ejemplo de uso")
