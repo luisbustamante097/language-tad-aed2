@@ -10,6 +10,8 @@ patterns: [
     { include: '#constants' }
     { include: '#constants_aux' }
     { include: '#arrays' }
+    { include: '#cross_symbol' }
+    { include: '#right_arrow_symbol' }
     {
         comment: 'Declaraciones de TADs auxiliares'
         match: '((?:\w*TAD\*?))(\ .*?\ )(es)(\ .*?(?=(\ |\n|\<|\\(|\{)))'
@@ -70,18 +72,7 @@ patterns: [
             { include: '#constants' }
             { include: '#constants_aux' }
             { include: '#arrays' }
-            # {     #Lo dejo de usar ya que encontre una forma de pintar todas las funciones
-            #     comment: 'Highligting del nombre de la funcion inicial y el signo "="'
-            #     match: '(^(?:\t\t))([A-Za-z]+?)(?=\\()(.+?(?=\=))(\=)'
-            #     captures:
-            #         # 2: name: 'entity.name.function.tad' #
-            #         4: name: 'variable.language.tad' #
-            # }
-            {
-                comment: 'Highligting para signo "="'
-                match: '(\ |\t|\n)(\=|\≡)(?=(\ |\t))'
-                name: 'variable.language.tad'
-            }
+            { include: '#equal_symbol' }
             {
                 comment: 'Atributos para los tipo Tupla'
                 match: '(?:\\..*?)([a-z]+)'
@@ -96,17 +87,7 @@ patterns: [
         name: 'entity.name.function.tad'
     }
     {
-        comment: 'Highligting para signo "x"'
-        name: 'variable.language.tad'
-        match: '(?:\ |\t)(?:x|\×)(?:\ |\t)'
-    }
-    {
-        comment: 'Highligting para signo "->"'
-        name: 'variable.language.tad'
-        match: '((?:\-\>|\↦))'
-    }
-    {
-        comment: "Llaves para distintos usos"
+        comment: "Llaves para restricciones"
         begin: '\{'
         beginCaptures:
             0: name: 'punctuation.section.parens.begin.tad'
@@ -122,6 +103,9 @@ patterns: [
             { include: '#constants' }
             { include: '#constants_aux' }
             { include: '#arrays' }
+            { include: '#equal_symbol' }
+            { include: '#iff_symbol' }
+            { include: '#implies_symbol' }
         ]
     }
 ]
@@ -170,4 +154,34 @@ repository:
             match: '^([0-9]+?)(?=\\])' #TODO: arreglar que no toma los numeros con "^"
             name: 'constant.numeric.tad'
         ]
+    }
+    cross_symbol:{
+        comment: 'Highligting para signo "x"'
+        name: 'variable.language.tad'
+        match: '(?:\ |\t)(?:x|\×)(?:\ |\t)'
+    }
+    right_arrow_symbol:{
+        comment: 'Highligting para signo "->"'
+        name: 'variable.language.tad'
+        match: '((?:\-\>|\↦))'
+    }
+    equal_symbol:{
+        comment: 'Highligting para signo "="'
+        match: '(\ |\t|\n)(\=|\≡)(?=(\ |\t))'
+        name: 'variable.language.tad'
+    }
+    iff_symbol:{
+        comment: 'Highligting para signo "<=>"'
+        name: 'variable.language.tad'
+        match: '(?:\↔|\<\=\>|\<\\-\>|\⇔)'
+    }
+    implies_symbol:{
+        comment: 'Highligting para signo "=>"'
+        name: 'variable.language.tad'
+        match: '(?:\⇒|\=\>|\→|\⇐|\<\=|(\⇒|\=\>|\→)L)'
+    }
+    equal_obs_symbol:{
+        comment: 'Highligting para signo "=obs"'
+        match: '(\ |\t)(\=obs)(?=(\ |\t))'
+        name: 'variable.language.tad'
     }
