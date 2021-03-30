@@ -92,7 +92,7 @@ patterns: [
     }
     {
         comment: 'Aridad de Funciones (Nombre de funcion)'
-        match: '(^(?:\t\t))(?!\/\/)(.*?\:)'     #TODO: Esta parchado para que no pinte los comentarios con ":"
+        match: '(^(?:\t\t))(?!\/\/)([A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ ]+\:)'     #TODO: Esta parchado para que no pinte los comentarios con ":"
         name: 'entity.name.function.tad'
     }
     {
@@ -144,7 +144,7 @@ repository:
     }
     functions:{
         comment: 'Highligting de nombres de funciones varias' #TODO: No puedo hacer que ande la letra "ñ"
-        match: '(?:\\(|\ |\t|\\+|\-|)([A-Za-z0-9\_\?\#\ñ\Ø]+?)(?=(\\(|\ \\())'
+        match: '(?:\\(|\ |\t|\\+|\-|)([A-zÀ-ú0-9\_\?\#\ñ\Ø]+?)(?=(\\(|\ \\())'
         captures:
             1: name: 'entity.name.function.tad'
     }
