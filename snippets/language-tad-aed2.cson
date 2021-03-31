@@ -19,17 +19,17 @@
       'prefix': '\\forall'
       'body': '∀'
     '\\∃':
-      'prefix': '\\exist'
+      'prefix': '\\exists'
       'body': '∃'
     '\\∄':
-      'prefix': '\\notexist'
+      'prefix': '\\notexists'
       'body': '∄'
-    '\\→':
+    '\\⇒':
       'prefix': '\\implica'
-      'body': '→'
-    '\\→L':
+      'body': '⇒'
+    '\\⇒L':
       'prefix': '\\impluego'
-      'body': '→L'
+      'body': '⇒L'
     '\\↔':
       'prefix': '\\iff'
       'body': '↔'
@@ -136,17 +136,17 @@
       'prefix': 'forall'
       'body': '∀'
     '∃':
-      'prefix': 'exist'
+      'prefix': 'exists'
       'body': '∃'
     '∄':
-      'prefix': 'notexist'
+      'prefix': 'notexists'
       'body': '∄'
-    '→':
+    '⇒':
       'prefix': 'implica'
-      'body': '→'
-    '→L':
+      'body': '⇒'
+    '⇒L':
       'prefix': 'impluego'
-      'body': '→L'
+      'body': '⇒L'
     '↔':
       'prefix': 'iff'
       'body': '↔'
@@ -244,7 +244,7 @@
       'prefix': 'esqueletoTad'
       'body': """
 TAD ${1:NombreTad}
-	Igualdad Observacional:
+	Igualdad Observacional:()
 	Generos: ${2:nombreTad}
 	Exporta: ${2:nombreTad}, observadores, generadores, 
 	Usa: ${3:Bool, Nat}
@@ -261,3 +261,63 @@ TAD ${1:NombreTad}
 		...}
 Fin TAD
 		"""
+    '\\₀ (subindex)':
+      'prefix': '\\0'
+      'body': '₀'
+    '₀ (subindex)':
+      'prefix': '0'
+      'body': '₀'
+    '\\₁ (subindex)':
+      'prefix': '\\1'
+      'body': '₁'
+    '₁ (subindex)':
+      'prefix': '1'
+      'body': '₁'
+    '\\₂ (subindex)':
+      'prefix': '\\2'
+      'body': '₂'
+    '₂ (subindex)':
+      'prefix': '2'
+      'body': '₂'
+    '\\₃ (subindex)':
+      'prefix': '\\3'
+      'body': '₃'
+    '₃ (subindex)':
+      'prefix': '3'
+      'body': '₃'
+    '\\₄ (subindex)':
+      'prefix': '\\4'
+      'body': '₄'
+    '₄ (subindex)':
+      'prefix': '4'
+      'body': '₄'
+    '\\₅ (subindex)':
+      'prefix': '\\5'
+      'body': '₅'
+    '₅ (subindex)':
+      'prefix': '5'
+      'body': '₅'
+    '\\₆ (subindex)':
+      'prefix': '\\6'
+      'body': '₆'
+    '₆ (subindex)':
+      'prefix': '6'
+      'body': '₆'
+    '\\₇ (subindex)':
+      'prefix': '\\7'
+      'body': '₇'
+    '₇ (subindex)':
+      'prefix': '7'
+      'body': '₇'
+    '\\₈ (subindex)':
+      'prefix': '\\8'
+      'body': '₈'
+    '₈ (subindex)':
+      'prefix': '8'
+      'body': '₈'
+    '\\₉ (subindex)':
+      'prefix': '\\9'
+      'body': '₉'
+    '₉ (subindex)':
+      'prefix': '9'
+      'body': '₉'
