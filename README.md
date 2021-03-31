@@ -77,10 +77,14 @@ Simbolo | Atajo
 
 Ademas de la lista de simbolos se puede usar los snippets para insertar:
 - Esqueleto de `if • then • else • if`: solo con escribir `if` o `ifthen` para la version inline.
+
 ![Imagen](./data/if_example.gif "Ejemplo de uso")
 - Esqueleto de TAD: solo con escribir `esqueloTad` se puede obtener un modelo basico de TAD para rellenar.
+
 ![Imagen](./data/esqueleto_example.gif "Ejemplo de uso")
 - Subindices para las variables: se pueden usar para tener mejor visualización de las variables usando por ejemplo `\0` para obtener un `₀`.
+
 ![Imagen](./data/subindex_example.gif "Ejemplo de uso")
 - Esqueleto para Igualdad Observacional: solo con escribir `igobs` se puede obtener un modelo basico de la sección para rellenar.
+
 ![Imagen](./data/igobs_example.gif "Ejemplo de uso")
