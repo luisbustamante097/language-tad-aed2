@@ -1,3 +1,18 @@
+0.2.0
+- Added diactrical letters support
+- Highlighting for "=obs", "iff" symbol and "implies" symbol
+- Better support for the IgObs section
+- Fixed some higlightings overlapping
+- Fixed bug in comments inline into "if" section
+- Added subindex symbols in snippets and other useful snippets
+- Fixed higlighting for header and "Extiende" section
+- Added "iff alternative", "kappa" and "sigma" symbols
+- Updated old snippets with its correspondent diacriticals letters
+- Added "," symbol in "IgObs" section to be used like a section ending character
+- Added an special snippet for a new IgObs section
+- Minor bugs patched
+- Updated README with the new features
+
 0.1.2
 Bugs fixed, added new snippets and updated README
 

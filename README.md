@@ -2,7 +2,7 @@
 Un intento de crear la sintaxis usada en AED2-FCEN-UBA para la escritura de TADs en Atom.
 
 
-![Imagen](./data/example.png "Es un TAD cualquiera que tenia guardado de cuando la curse (?")
+![Imagen](./data/example.png "TAD diccionario")
 
 
 **(Disclaimer)**
@@ -33,16 +33,17 @@ Una lista de ellas con su correspondiente atajo es brindado en la siguiente tabl
 Simbolo | Atajo
 --------|------
 ∨   | \lor
-∨L  | \\oluego
+∨L  | \oluego
 ∧   | \land
-∧L  | \\yLuego
+∧L  | \yLuego
 ¬   | \not
 ∀   | \forall
-∃   | \exist
-∄   | \notexist
-→   | \implica
-→L  | \\impluego
+∃   | \exists
+∄   | \notexists
+⇒   | \implica
+⇒L  | \impluego
 ↔   | \iff
+⇐⇒  | \iffalt
 ∴   | \porlotanto
 ⋂   | \genintersection
 ⋃   | \genunion
@@ -71,9 +72,15 @@ Simbolo | Atajo
 ←   | \gets
 ≤   | \leq
 ≥   | \geq
+κ   | \kappa
+σ   | \sigma
 
 Ademas de la lista de simbolos se puede usar los snippets para insertar:
-- Esqueleto de `IF THEN ELSE FI`: solo con escribir `if` o `ifthen` para la version inline.
+- Esqueleto de `if • then • else • if`: solo con escribir `if` o `ifthen` para la version inline.
 ![Imagen](./data/if_example.gif "Ejemplo de uso")
 - Esqueleto de TAD: solo con escribir `esqueloTad` se puede obtener un modelo basico de TAD para rellenar.
 ![Imagen](./data/esqueleto_example.gif "Ejemplo de uso")
+- Subindices para las variables: se pueden usar para tener mejor visualización de las variables usando por ejemplo `\0` para obtener un `₀`.
+![Imagen](./data/subindex_example.gif "Ejemplo de uso")
+- Esqueleto para Igualdad Observacional: solo con escribir `igobs` se puede obtener un modelo basico de la sección para rellenar.
+![Imagen](./data/igobs_example.gif "Ejemplo de uso")
