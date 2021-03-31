@@ -119,6 +119,7 @@ patterns: [
             0: name: 'keyword.control.conditional.tad'
         patterns:[
             { include: '#constants' }
+            { include: '#comment' }
             { include: '#strings' }
             { include: '#constants' }
             { include: '#constants_aux' }
@@ -130,7 +131,7 @@ patterns: [
             {
                 comment: 'Llave si hay comentario'
                 name: 'keyword.control.conditional.tad'
-                match: '\}(.*?)\/\/'
+                match: '\}(.*?)(?=\/\/)'
             }
         ]
     }
