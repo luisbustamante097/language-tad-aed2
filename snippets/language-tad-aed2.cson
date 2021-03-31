@@ -321,3 +321,57 @@ Fin TAD
     '₉ (subindex)':
       'prefix': '9'
       'body': '₉'
+    'Observadores Basicos':
+      'prefix': 'Observadores basicos'
+      'body': 'Observadores Basicos:\n\t$1'
+    'Igualdad Observacional':
+      'prefix': 'Igualdad observacional'
+      'body': 'Igualdad Observacional:\n\t$1'
+    'Generadores':
+      'prefix': 'Generadores'
+      'body': 'Generadores:\n\t$1'
+    'Otras Operaciones':
+      'prefix': 'Otras operaciones'
+      'body': 'Otras Operaciones:\n\t$1'
+    'Axiomas:':
+      'prefix': 'Axiomas'
+      'body': 'Axiomas:\n\t$1\nFin TAD'
+    'ConjVacio?':
+      'prefix': 'conjvacio'
+      'body': 'Ø?($1)'
+    'dameUno':
+      'prefix': 'dameUno'
+      'body': 'dameUno($1)'
+    'sinUno':
+      'prefix': 'sinUno'
+      'body': 'sinUno($1)'
+    'está?':
+      'prefix': 'esta?'
+      'body': 'está?($1)'
+    'vacía?':
+      'prefix': 'vacia?'
+      'body': 'vacía?($1)'
+    'prim':
+      'prefix': 'prim'
+      'body': 'prim($1)'
+    'fin':
+      'prefix': 'fin'
+      'body': 'fin($1)'
+    'nil?':
+      'prefix': 'nil?'
+      'body': 'nil?($1)'
+    'definido?':
+      'prefix': 'definido?'
+      'body': 'definido?($1)'
+    'esHoja?':
+      'prefix': 'esHoja?'
+      'body': 'esHoja?($1)'
+    'def?':
+      'prefix': 'def?'
+      'body': 'def?($1)'
+    'obtener':
+      'prefix': 'obtener'
+      'body': 'obtener($1)'
+    'claves':
+      'prefix': 'claves'
+      'body': 'claves($1)'
