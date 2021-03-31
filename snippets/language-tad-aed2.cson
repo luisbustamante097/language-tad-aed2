@@ -345,6 +345,15 @@ Fin TAD
     'Géneros':
       'prefix': 'Generos'
       'body': 'Géneros:\t$1'
+    'IgObs model':
+      'prefix': 'igobs'
+      'body': '''Igualdad Observacional:\t(∀${1:x}₀,${1:x}₁: ${2:tipo})
+      \t\t\t\t\t\t(${1:x}₀ =obs ${1:x}₁ ⇐⇒
+			\t\t\t\t\t\t\t\t( 
+			\t\t\t\t\t\t\t\t\t$3
+			\t\t\t\t\t\t\t\t)
+			\t\t\t\t\t\t\t);
+      '''
     'Igualdad Observacional':
       'prefix': 'Igualdad observacional'
       'body': 'Igualdad Observacional:\t($1);'
