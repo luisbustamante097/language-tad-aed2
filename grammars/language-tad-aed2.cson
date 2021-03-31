@@ -234,7 +234,7 @@ repository:
     iff_symbol:{
         comment: 'Highligting para signo "<=>"'
         name: 'variable.language.tad'
-        match: '(?:\↔|\<\=\>|\<\\-\>|\⇔)'
+        match: '(?:\↔|\<\=\>|\<\\-\>|\⇔|\⇐\⇒)'
     }
     equal_obs_symbol:{
         comment: 'Highligting para signo "=obs"'

@@ -33,6 +33,9 @@
     '\\↔':
       'prefix': '\\iff'
       'body': '↔'
+    '\\⇐⇒':
+      'prefix': '\\iffalt'
+      'body': '⇐⇒'
     '\\∴':
       'prefix': '\\porlotanto'
       'body': '∴'
@@ -150,6 +153,9 @@
     '↔':
       'prefix': 'iff'
       'body': '↔'
+    '⇐⇒':
+      'prefix': 'iffalt'
+      'body': '⇐⇒'
     '∴':
       'prefix': 'porlotanto'
       'body': '∴'
