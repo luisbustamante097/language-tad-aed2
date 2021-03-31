@@ -120,6 +120,12 @@
     '\\≥':
       'prefix': '\\geq'
       'body': '≥'
+    '\\κ':
+      'prefix': '\\kappa'
+      'body': 'κ'
+    '\\σ':
+      'prefix': '\\sigma'
+      'body': 'σ'
     '∨':
       'prefix': 'lor'
       'body': '∨'
@@ -240,6 +246,12 @@
     '≥':
       'prefix': 'geq'
       'body': '≥'
+    'κ':
+      'prefix': 'kappa'
+      'body': 'κ'
+    'σ':
+      'prefix': 'sigma'
+      'body': 'σ'
     'if Condition':
       'prefix': 'if'
       'body': 'if ${1:condicion} then\n\t${2:resultado}\nelse\n\t${3:sino}\nfi'
