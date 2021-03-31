@@ -37,10 +37,19 @@ patterns: [
     }
     {
         comment: 'Declaracion de TAD principal'
-        match: '((?:\w*TAD\*?))(\ .*?\n)'
+        match: '((?:\w*TAD\*?))(\ .*?\\((.*?(?=\\))).*?\\)|\ .*?\n)'
         captures:
-            1: name: 'markup.bold.tad'      # "TAD"
-            2: name: 'variable.other.tad'   # Nombre de TAD
+            1: name: 'markup.bold.tad'          # "TAD"
+            2: name: 'variable.other.tad'       # Nombre de TAD
+            3: name: 'storage.modifier.tad'     # (Parametro formal)
+    }
+    {
+        comment: 'Declaracion de TAD principal'
+        match: '(?i)(\w*(EXTIENDE)(\ |\:|\t|\n))(\ .*?\\((.*?(?=\\))).*?\\))'
+        captures:
+            1: name: 'markup.bold.tad'          # "EXTIENDE"
+            4: name: 'variable.other.tad'       # Nombre de TAD
+            5: name: 'storage.modifier.tad'     # (Parametro formal)
     }
     {
         comment: 'Palabras clave de los TADS'
