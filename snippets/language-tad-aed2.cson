@@ -1,4 +1,4 @@
-#Todos los snippets tienen que tener un duplicado con el simbolo \ escapeado
+#Todos los snippets del estilo LATEX tienen que tener un duplicado con el simbolo \ escapeado
 '.source.tad':
     '\\∨':
       'prefix': '\\lor'
@@ -262,12 +262,12 @@
       'prefix': 'esqueletoTad'
       'body': """
 TAD ${1:NombreTad}
-	Igualdad Observacional:()
-	Generos: ${2:nombreTad}
+	Igualdad Observacional:();
+	Géneros: ${2:nombreTad}
 	Exporta: ${2:nombreTad}, observadores, generadores, 
 	Usa: ${3:Bool, Nat}
 	
-	Observadores Basicos:
+	Observadores Básicos:
 		${4:obs?:	nombreTad t × nat n	-> bool 	\\{ n ≥ 1 \\}}
 	Generadores:
 		${5:nil:			-> nombreTad}
@@ -341,10 +341,13 @@ Fin TAD
       'body': '₉'
     'Observadores Basicos':
       'prefix': 'Observadores basicos'
-      'body': 'Observadores Basicos:\n\t$1'
+      'body': 'Observadores Básicos:\n\t$1'
+    'Géneros':
+      'prefix': 'Generos'
+      'body': 'Géneros:\t$1'
     'Igualdad Observacional':
       'prefix': 'Igualdad observacional'
-      'body': 'Igualdad Observacional:\n\t$1'
+      'body': 'Igualdad Observacional:\t($1);'
     'Generadores':
       'prefix': 'Generadores'
       'body': 'Generadores:\n\t$1'
