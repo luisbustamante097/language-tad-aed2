@@ -107,12 +107,7 @@ patterns: [
             { include: '#constants_aux' }
             { include: '#equal_symbol' }
             # { include: '#functions_symbols' }
-            {
-                comment: 'Atributos para los tipo Tupla'
-                match: '(?:\\..*?)([a-z]+)'
-                captures:
-                    1: name: 'variable.parameter.tad'
-            }
+            { include: '#tupla_element' }
         ]
     }
     {
@@ -141,6 +136,7 @@ patterns: [
             { include: '#equal_symbol' }
             { include: '#iff_symbol' }
             { include: '#logic_symbols' }
+            { include: '#tupla_element' }
             # { include: '#functions_symbols' }
             {
                 comment: 'Llave si hay comentario'
@@ -245,4 +241,10 @@ repository:
         comment: 'Highligting para signo "=obs"'
         match: '(\ |\t)(\=obs)(?=(\ |\t))'
         name: 'variable.language.tad'
+    }
+    tupla_element:{
+        comment: 'Atributos para los tipo Tupla'
+        match: '(?:\\..*?)([a-z]+)'
+        captures:
+            1: name: 'variable.parameter.tad'
     }
