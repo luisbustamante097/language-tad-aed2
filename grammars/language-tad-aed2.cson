@@ -178,7 +178,7 @@ repository:
     logic_symbols:{
         comment: 'Simbolos de funciones condicionales'
         name: 'keyword.control.conditional.tad'
-        match: '(\⇒|\=\>|\→)L|(\∨L|\∧L|\∨|\∧|\¬|(\∀.*?:)|\∀|\∃|\∄|\⇒|\=\>|\→|\⇐|\<\=)'
+        match: '(\⇒|\=\>|\→)L|(\∨L|\∧L|\∨|\∧|\¬|((\∀|\∃|\∄).*?:)|\∀|\∃|\∄|\⇒|\=\>|\→|\⇐|\<\=)'
     }
     constants:{
         comment: 'Constantes'
