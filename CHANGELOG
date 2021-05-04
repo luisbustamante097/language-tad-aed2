@@ -1,3 +1,13 @@
+0.2.1
+- Added β symbol to function highlighting
+- Fixed bug with equal symbol highlighting
+- Added highlighting to "pi" function and subindex numbers
+- Added tupla elements highlighting in restrictions
+- Added ∃ and ∄ highlighting in brackets mode
+- Added ≠ symbol and its snippet
+- Added ⟨ and ⟩ symbols for "tuplas"
+- Minor bugs patched
+
 0.2.0
 - Added diactrical letters support
 - Highlighting for "=obs", "iff" symbol and "implies" symbol
