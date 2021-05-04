@@ -10,8 +10,8 @@ patterns: [
     { include: '#constants' }
     { include: '#constants_aux' }
     { include: '#arrays' }
-    { include: '#cross_symbol' }
-    { include: '#right_arrow_symbol' }
+    # { include: '#cross_symbol' }
+    # { include: '#right_arrow_symbol' }
     {
         comment: 'Declaraciones de TADs auxiliares'
         match: '((?:\w*TAD\*?))(\ .*?\ )(es)(\ .*?(?=(\ |\n|\<|\\(|\{)))'
@@ -108,43 +108,13 @@ patterns: [
             { include: '#equal_symbol' }
             # { include: '#functions_symbols' }
             { include: '#tupla_element' }
+            # Agregadas para declaracion ad hoc en Axiomas
+            { include: '#function_name_declaration' }
+            { include: '#restrictions_brackets' }
         ]
     }
-    {
-        comment: 'Aridad de Funciones (Nombre de funcion)'
-        match: '(^(?:\t\t))(?!\/\/)([A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ ]+\:)'     #TODO: Esta parchado para que no pinte los comentarios con ":"
-        name: 'entity.name.function.tad'
-    }
-    {
-        comment: "Llaves para restricciones"
-        begin: '\{'
-        beginCaptures:
-            0: name: 'punctuation.section.parens.begin.tad'
-            0: name: 'keyword.control.conditional.tad'
-        end: '\}\n|(?=\/\/)'
-        endCaptures:
-            0: name: 'punctuation.section.parens.end.tad'
-            0: name: 'keyword.control.conditional.tad'
-        patterns:[
-            { include: '#comment' }
-            { include: '#constants' }
-            { include: '#strings' }
-            { include: '#constants' }
-            { include: '#constants_aux' }
-            { include: '#arrays' }
-            { include: '#functions' }
-            { include: '#equal_symbol' }
-            { include: '#iff_symbol' }
-            { include: '#logic_symbols' }
-            { include: '#tupla_element' }
-            # { include: '#functions_symbols' }
-            {
-                comment: 'Llave si hay comentario'
-                name: 'keyword.control.conditional.tad'
-                match: '\}(.*?)(?=\/\/)'
-            }
-        ]
-    }
+    { include: '#function_name_declaration' }
+    { include: '#restrictions_brackets' }
 ]
 
 repository:
@@ -247,4 +217,46 @@ repository:
         match: '(?:\\..*?)([a-z]+)'
         captures:
             1: name: 'variable.parameter.tad'
+    }
+    function_name_declaration:{
+        comment: "Aridad de Funciones (Nombre de funcion)"
+        begin: '(^(?:\t\t))(?!\/\/)([A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ ]+\:)'
+        beginCaptures:
+            0: name: 'entity.name.function.tad'
+        end: '(?=\{)|(\n)'
+        patterns:[
+            { include: '#cross_symbol' }
+            { include: '#right_arrow_symbol' }
+            
+        ]
+    }
+    restrictions_brackets:{
+        comment: "Llaves para restricciones"
+        begin: '\{'
+        beginCaptures:
+            0: name: 'punctuation.section.parens.begin.tad'
+            0: name: 'keyword.control.conditional.tad'
+        end: '\}\n|(?=\/\/)'
+        endCaptures:
+            0: name: 'punctuation.section.parens.end.tad'
+            0: name: 'keyword.control.conditional.tad'
+        patterns:[
+            { include: '#comment' }
+            { include: '#constants' }
+            { include: '#strings' }
+            { include: '#constants' }
+            { include: '#constants_aux' }
+            { include: '#arrays' }
+            { include: '#functions' }
+            { include: '#equal_symbol' }
+            { include: '#iff_symbol' }
+            { include: '#logic_symbols' }
+            { include: '#tupla_element' }
+            # { include: '#functions_symbols' }
+            {
+                comment: 'Llave si hay comentario'
+                name: 'keyword.control.conditional.tad'
+                match: '\}(.*?)(?=\/\/)'
+            }
+        ]
     }

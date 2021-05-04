@@ -6,6 +6,7 @@
 - Added ∃ and ∄ highlighting in brackets mode
 - Added ≠ symbol and its snippet
 - Added ⟨ and ⟩ symbols for "tuplas"
+- Added adhoc function declarations in Axiomas
 - Minor bugs patched
 
 0.2.0
