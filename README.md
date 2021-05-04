@@ -75,6 +75,8 @@ Simbolo | Atajo
 ≥   | \geq
 κ   | \kappa
 σ   | \sigma
+⟨   | \tuplaabrir
+⟩   | \tuplacerrar
 
 Ademas de la lista de simbolos se puede usar los snippets para insertar:
 - Esqueleto de `if • then • else • if`: solo con escribir `if` o `ifthen` para la version inline.
