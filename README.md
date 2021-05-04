@@ -63,6 +63,7 @@ Simbolo | Atajo
 ∞   | \infinito
 ↦   | \funcion
 ≡   | \equivale
+≠   | \notequal
 Ø   | \emptyset
 β   | \beta
 α   | \alpha

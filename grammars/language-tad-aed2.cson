@@ -229,7 +229,7 @@ repository:
     }
     equal_symbol:{
         comment: 'Highligting para signo "="'
-        match: '(\ |\t|\n)(\=|\≡)(?=(\ |\t|\n))'
+        match: '(\ |\t|\n)(\=|\≡|\≠)(?=(\ |\t|\n))'
         name: 'variable.language.tad'
     }
     iff_symbol:{
