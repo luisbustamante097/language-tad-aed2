@@ -107,11 +107,11 @@ patterns: [
             { include: '#tupla_element' }
             # Agregadas para declaracion ad hoc en Axiomas
             { include: '#function_name_declaration' }
-            { include: '#restrictions_brackets' }
+            { include: '#restriction_brackets' }
         ]
     }
     { include: '#function_name_declaration' }
-    { include: '#restrictions_brackets' }
+    { include: '#restriction_brackets' }
 ]
 
 repository:
@@ -227,13 +227,13 @@ repository:
             
         ]
     }
-    restrictions_brackets:{
+    restriction_brackets:{
         comment: "Llaves para restricciones"
         begin: '\{'
         beginCaptures:
             0: name: 'punctuation.section.parens.begin.tad'
             0: name: 'keyword.control.conditional.tad'
-        end: '\}\n|(?=\/\/)'
+        end: '(\})(\\s*\n)|(\}.*?)(?=//)'
         endCaptures:
             0: name: 'punctuation.section.parens.end.tad'
             0: name: 'keyword.control.conditional.tad'
