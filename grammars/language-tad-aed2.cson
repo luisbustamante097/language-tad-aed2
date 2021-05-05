@@ -5,13 +5,10 @@ limitLineLength: false
 
 patterns: [
     { include: '#comment' }
-    { include: '#conditionals' }
     { include: '#strings' }
     { include: '#constants' }
     { include: '#constants_aux' }
     { include: '#arrays' }
-    # { include: '#cross_symbol' }
-    # { include: '#right_arrow_symbol' }
     {
         comment: 'Declaraciones de TADs auxiliares'
         match: '((?:\w*TAD\*?))(\ .*?\ )(es)(\ .*?(?=(\ |\n|\<|\\(|\{)))'
@@ -153,7 +150,7 @@ repository:
     constants:{
         comment: 'Constantes'
         name: 'constant.language.tad'
-        match: '(?i)(\\b(true|false|none|\Ø|nil|[0-9])\\b)'
+        match: '(?i)(\\b(true|false|none|\Ø|nil|[0-9]+?)\\b)'
     }
     constants_aux:{
         comment: 'Constante <>'
@@ -216,7 +213,7 @@ repository:
         comment: 'Atributos para los tipo Tupla'
         match: '(?:\\..*?)([a-z]+)'
         captures:
-            1: name: 'variable.parameter.tad'
+            1: name: 'variable.language.tad'
     }
     function_name_declaration:{
         comment: "Aridad de Funciones (Nombre de funcion)"
