@@ -211,7 +211,7 @@ repository:
     }
     tupla_element:{
         comment: 'Atributos para los tipo Tupla'
-        match: '(?:\\..*?)([a-z]+)'
+        match: '(?:\\.)(([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+)(?=\\[)|[A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+)'
         captures:
             1: name: 'variable.language.tad'
     }
