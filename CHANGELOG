@@ -1,4 +1,4 @@
-0.3.0
+1.0.0
 - Added INTERFACE grammar!!! (and some useful snippets)
 - Fixed constants bug, fixed tupla's elements bug and deleted some non-necessary lines
 - Fixed diacritics and special chars for tupla's elements
@@ -6,6 +6,8 @@
 - New symbols and new snippets "←,→,Ω,ω,Θ"
 - Added "|" symbol for "logic symbols"
 - Added "=obs" for restrictions
+
+0.3.0 - 0.4.0 FUERON ERRORES AL PUBLICAR LA EXTENSION EN ATOM, NO TIENEN NADA PARTICULAR
 
 0.2.1
 - Added β symbol to function highlighting
