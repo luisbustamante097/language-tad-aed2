@@ -1,6 +1,18 @@
+# (NUEVO!) Ahora también se puede trabajar Rep, Abs e Interfaz
+¡Ahora también podés hacer los ejercicios de la Práctica 3 en Atom! Todas las nuevas características fueron inyectadas sobre la anterior versión de la extensión, por lo que se puede trabajar con TADs y Diseño en el mismo archivo .tad.
+Toda la sintaxis está basada en los apuntes "Diseño jerárquico de TADs" y "Apuntes de Módulos Básicos" de la cátedra de AED2.
+Aún sigo testeando que ande todo correctamente por lo que hay (muchísimos) bugs que iré solucionando con el tiempo, por lo que se recomienda no colgar en actualizar la extensión (saldrá un cartel en Atom cada que haya nueva actualización de cualquier extensión).
+
+![Imagen](./data/diseño_example.png "Rep, Abs e Interfaz de ejemplo")
+
+**OBS:** Si alguna de las secciones no cierra bien su sintaxis particular se puede escribir el siguiente terminador `---` para cerrar correctamente dichas secciones (mi idea es quitar la necesidad de esto, pero por lo pronto lo dejo así).
+
+## Snippets
+- Solo con teclear `nueva interfaz` podrán tener una esqueleto de una interfaz de ejemplo para completar.
+- Para la etapa de codeo se tienen snippets para estructuras del paradigma imperativo como: `while do`, `for` y `switch`.
+
 # Sintaxis para escribir TADs en Atom
 Un intento de crear la sintaxis usada en AED2-FCEN-UBA para la escritura de TADs en Atom.
-
 
 ![Imagen](./data/example.png "TAD diccionario")
 
