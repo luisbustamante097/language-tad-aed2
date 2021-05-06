@@ -71,6 +71,8 @@ Simbolo | Atajo
 ◦   | \emptydot
 π   | \pi
 ←   | \gets
+←   | \ig (alternativa)
+→   | \rarrow
 ≤   | \leq
 ≥   | \geq
 κ   | \kappa
