@@ -453,3 +453,64 @@ Fin TAD
     'claves':
       'prefix': 'claves'
       'body': 'claves($1)'
+    'While do (diseño)':
+      'prefix': 'while'
+      'body': 'while ${1:condicion} do\n\t${2:resultado}\nend while'
+    'For Loop (diseño)':
+      'prefix': 'for'
+      'body': 'for ${1:i} ← 0, ${1:i} < ${2:count}, ${1:i}${3:++}\n\t${4:// code }\nend for'
+    'Switch (diseño)':
+      'prefix': 'switch'
+      'body': 'switch ${1:variable} \n\tcase ${2:valor}:\nend switch'
+    'Nueva Interfaz (diseño)':
+      'prefix': 'nueva interfaz'
+      'body': '''
+Representación:
+	${1:tipoDato} se representa con estr donde 
+		estr es tupla ⟨	${2:arg₀:	nat,
+						arg₁: 	puntero(nat)} ⟩
+
+Solución Informal:
+	${3:- e.arg₀ + 1 debe ser ...
+	- si e.arg₁ ...}
+---
+Invariante de Representación:
+	Rep:	estr	->	boolean
+	(∀e: estr) Rep(e)	≡ true ⇐⇒ (1)∧(2)
+		donde: 
+		(1)	≡	${4:e.arg₀ > ...
+		(2)	≡	(∀n: nat)(e.arg₁ < ...)}
+---
+Función de abstracción:
+	Abs:	estr	->	${1:tipoDato}	{Rep(e)}
+	(∀e: estr) Abs(e) =obs td: ${1:tipoDato} | (1)∧(2)
+		donde: 
+		(1)	≡	${5:obs₁(td) = ...
+		(2)	≡	obs₂(td) = ...}
+---
+Interfaz:
+	Parámetros formales:
+		Géneros:	α
+		Función:
+			${7:Copiar(in a:α) -> res: α
+			Pre ≡ {true\\}
+			Post ≡ {res = a\\} 
+			Complejidad: Θ(copy(a))
+			Descripción: Función copia de α's.}
+			---
+	Se explica con:	${6:TipoDato}
+	Géneros:		${1:tipoDato}
+	
+	Operaciones básicas:
+		${8:NuevaOp(in n: nat)	-> res: tipoDato
+		Pre ≡ {true\\}
+		Post ≡ {res =obs ...\\}
+		Complejidad: Θ(1)
+		Descripción: Genera ...
+		Aliasing: No presenta aspectos de aliasing.}
+		---		
+	Algoritmos del módulo:
+		${9:iNuevaOp(in n: nat) -> res: estr
+			res ← ⟨0, 9⟩	// Ejemplo}
+		---
+'''
