@@ -112,6 +112,16 @@ patterns: [
     }
     { include: '#function_name_declaration' }
     { include: '#restriction_brackets' }
+    
+    
+    # -.-.-.-.-.-.-.-.-SECCION DE DISEÑO-.-.-.-.-.-.-.-.-
+    { include: '#design_section_representation' }
+    { include: '#design_section_informal_solution' }
+    { include: '#design_section_rep' }
+    { include: '#design_section_abs' }
+    { include: '#design_section_main_interface' }
+    # -.-.-.-.-.-.-.-.-SECCION DE DISEÑO-.-.-.-.-.-.-.-.-
+    
 ]
 
 repository:
@@ -257,4 +267,356 @@ repository:
                 match: '\}(.*?)(?=\/\/)'
             }
         ]
+    }
+    design_section_representation:{
+        comment: 'Representación (section)'
+        begin: '(?i)((^|\t)REPRESENTACI[O|Ó|o|ó]N:)'
+        beginCaptures:
+            0: name: 'markup.bold.tad'
+        end: '(---)|(?=\⟩)\⟩((;))|(?=\⟩\n)|^$'  #se puede terminar con "---" o "⟩;"
+        endCaptures:
+            1: name: 'comment.line.tad'
+            2: name: 'comment.line.tad'
+        patterns:[
+            { include: '#comment' }
+            {
+                comment: '... se representa con...'
+                match: '\\s(\\w+)(?:|\\((\\w+)\\))\ (se representa con)'
+                captures:
+                    1: name: 'storage.type.tad'     # tipo principal
+                    2: name: 'storage.type.tad'     # parametro del tipo principal
+                    3: name: 'markup.underline.tad' #"se representa con"
+            }
+            {
+                comment: 'estr...'
+                name: 'entity.name.type.tad'
+                match: 'estr'
+            }
+            {
+                comment: 'donde...'
+                name: 'markup.underline.tad'
+                match: 'donde'
+            }
+            {
+                comment: 'tupla...'
+                match: '(?:es\\s)(tupla)'
+                captures:
+                    
+                    1: name: 'storage.type.tad'  # nombre de atributo
+            }
+            {
+                comment: 'Interior de tupla (con parametro)'
+                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(\\w+)\\((\\w+)\\)'
+                captures:
+                    1: name: 'variable.language.tad'    # nombre de atributo
+                    2: name: 'storage.type.tad'         # tipo del atributo
+                    3: name: 'storage.type.tad'         # parametro del tipo
+            }
+            {
+                comment: 'Interior de tupla (arreglo_dimensionable de ...)'
+                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(arreglo_dimensionable)(?:.*de\ )(\\w+)'
+                captures:
+                    1: name: 'variable.language.tad'    # nombre de atributo
+                    2: name: 'storage.type.tad'         # "arreglo_dimensionable"
+                    3: name: 'storage.type.tad'         # tipo del array
+            }
+            {
+                comment: 'Interior de tupla (array de ...)'
+                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(array|arreglo)(?:.*de\ )(\\w+)'
+                captures:
+                    1: name: 'variable.language.tad'    # nombre de atributo
+                    2: name: 'storage.type.tad'         # "array"
+                    3: name: 'storage.type.tad'         # tipo del array
+            }
+            {
+                comment: 'Interior de tupla (sin parametros)'
+                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(\\w+)'
+                captures:
+                    1: name: 'variable.language.tad'    # nombre de atributo
+                    2: name: 'storage.type.tad'         # tipo del atributo
+            }
+        ]
+    }
+    design_section_informal_solution:{
+        comment: 'Solucion Informal (section)'
+        begin: '(?i)((^|\\s+)SOLUCI[O|Ó|o|ó]N INFORMAL:)'
+        beginCaptures:
+            0: name: 'markup.bold.tad'
+        end: '---|^$'
+        endCaptures:
+            0: name: 'comment.line.tad'
+        patterns:[
+            { include: '#comment' }
+            { include: '#strings' }
+            { include: '#tupla_element' }
+            { include: '#constants' }
+            { include: '#constants_aux' }
+            { include: '#arrays' }
+            { include: '#functions' }
+            { include: '#equal_obs_symbol' }
+            { include: '#iff_symbol' }
+            { include: '#logic_symbols' }
+            { include: '#equal_symbol' }
+            # { # Me gusto más darle cierto color, pero dejo por las dudas
+            #     comment: 'Todo como Comentario'
+            #     match: '^.*'
+            #     name: 'comment.block.tad'
+            # }
+        ]
+    }
+    design_section_rep:{
+        comment: 'Invariante de Representación (section)'
+        begin: '(?i)((^|\\s+)Invariante de Representaci[O|Ó|o|ó]n:)'
+        beginCaptures:
+            0: name: 'markup.bold.tad'
+        end: '---|^$'
+        endCaptures:
+            0: name: 'comment.line.tad'
+        patterns:[
+            { include: '#comment' }
+            { include: '#strings' }
+            { include: '#conditionals' }
+            # Agregado para la declaracion del REP
+            {
+                comment: 'donde...'
+                name: 'markup.underline.tad'
+                match: 'donde'
+            }
+            {
+                comment: "Aridad de Funciones (Nombre de funcion)"
+                begin: '[A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ ]+\:'
+                beginCaptures:
+                    0: name: 'entity.name.function.tad'
+                end: '(?=\{)|(\n)'
+                patterns:[
+                    { include: '#cross_symbol' }
+                    { include: '#right_arrow_symbol' }
+                    
+                ]
+            }
+            {
+                comment: 'Macro de extensión númerico'
+                name: 'entity.name.type.tad'
+                match: '\\([0-9]+\\)'
+            }
+            { include: '#equal_obs_symbol' }
+            # Copiado de #restriction_brackets
+            { include: '#constants' }
+            { include: '#strings' }
+            { include: '#constants' }
+            { include: '#constants_aux' }
+            { include: '#arrays' }
+            { include: '#functions' }
+            { include: '#equal_symbol' }
+            { include: '#iff_symbol' }
+            { include: '#logic_symbols' }
+            { include: '#tupla_element' }
+            { include: '#programming_constants' }
+        ]
+    }
+    design_section_abs:{
+        comment: 'Función de abstracción (section)'
+        begin: '(?i)((^|\\s+)Funci[O|Ó|o|ó]n de abstracci[O|Ó|o|ó]n:)'
+        beginCaptures:
+            0: name: 'markup.bold.tad'
+        end: '---|^$'
+        endCaptures:
+            0: name: 'comment.line.tad'
+        patterns:[
+            { include: '#comment' }
+            { include: '#strings' }
+            { include: '#conditionals' }
+            {
+                comment: 'donde...'
+                name: 'markup.underline.tad'
+                match: 'donde'
+            }
+            {
+                comment: 'Highligting para signo "=obs" (MODIFICADO)'
+                match: '(\ |\t)((\=obs))(\\s)(.*?\:)(.*?\|)'
+                captures:
+                    2: name: 'variable.language.tad'
+            }
+            {
+                comment: "Aridad de Funciones (Nombre de funcion)"
+                begin: '[A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ ]+\:'
+                beginCaptures:
+                    0: name: 'entity.name.function.tad'
+                end: '(?=\{)|(\n)'
+                patterns:[
+                    { include: '#cross_symbol' }
+                    { include: '#right_arrow_symbol' }
+                    
+                ]
+            }
+            {
+                comment: 'Macro de extensión númerico'
+                name: 'entity.name.type.tad'
+                match: '\\([0-9]+\\)'
+            }
+            { include: '#equal_obs_symbol' }
+            # Agregado el restriction_brackets perse
+            { include: '#restriction_brackets' }
+            # Copiado de #restriction_brackets
+            { include: '#constants' }
+            { include: '#strings' }
+            { include: '#constants' }
+            { include: '#constants_aux' }
+            { include: '#arrays' }
+            { include: '#functions' }
+            { include: '#equal_symbol' }
+            { include: '#iff_symbol' }
+            { include: '#logic_symbols' }
+            { include: '#tupla_element' }
+            { include: '#programming_constants' }
+        ]
+    }
+    design_section_main_interface:{
+        comment: 'Interfaz (section)'
+        begin: '(?i)((^|\\s+)Interfaz\:)'
+        beginCaptures:
+            0: name: 'markup.bold.tad'
+        end: '^$'
+        endCaptures:
+            0: name: 'comment.line.tad'
+        patterns:[
+            { include: '#comment' }
+            { include: '#strings' }
+            {
+                comment: 'Palabras clave de la Interfaz'
+                name: 'markup.bold.tad'
+                match: '(?i)(\\s*(?:par[a,á]metros formales|Se explica con|Funci[ó,o]n|Funciones|Operaciones b[á,]sicas|Algoritmos del m[ó,o]dulo|Algoritmos)(\ |\:|\t|\n))'
+            }
+            {
+                comment: 'Generos (linea)'
+                begin: '(?i)(\\s*(?:g[e,é]neros)(\ |\:|\t|\n))'
+                beginCaptures:
+                    0: name: 'markup.bold.tad'
+                end: '\\n'
+                endCaptures:
+                    0: name: 'comment.line.tad'
+                # patterns:[]
+            }
+            {
+                comment: 'Se explica con (linea)'
+                begin: '(?i)(\\s*(?:Se explica con)(\ |\:|\t|\n))'
+                beginCaptures:
+                    0: name: 'markup.bold.tad'
+                end: '\\n'
+                endCaptures:
+                    0: name: 'comment.line.tad'
+                # patterns:[]
+            }
+            {
+                comment: 'Bloque de implementación de función'
+                begin: '(?:^\\s+)((i)[A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=\\(|\ \\()'
+                beginCaptures:
+                    1: name: 'entity.name.function.tad'     #nombre de función
+                    2: name: 'string.other.tad'          # "i" de implementación (opcional)
+                end: '---'
+                endCaptures:
+                    0: name: 'comment.line.tad'
+                patterns:[
+                    { include: '#comment' }
+                    { include: '#strings' }
+                    
+                    # Parametros de entrada y Salida de función
+                    { include: '#design_section_main_interface__function_parameters' }
+                    { include: '#design_section_main_interface__res_function' }
+                    
+                    { include: '#conditionals' }
+                    # Agregados para escribir código
+                    { include: '#loop_keywords' }
+                    { include: '#operation_symbols' }
+                    { include: '#programming_constants' }
+                    { include: '#design_functions' }
+                    
+                    
+                    { include: '#logic_symbols' }
+                    { include: '#arrays' }
+                    { include: '#constants' }
+                    { include: '#constants_aux' }
+                    { include: '#tupla_element' }
+                    
+                    {
+                        comment: 'Valor "res" (para enfasis del resultado)'
+                        name: 'entity.name.type.tad'
+                        match: '\\b(res)\\b'
+                    }
+                ]
+            }
+            {
+                comment: 'Bloque de interfaz por cada función'
+                begin: '(?:^\\s+)([A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=\\(|\ \\()'
+                beginCaptures:
+                    1: name: 'entity.name.function.tad'     #nombre de función
+                end: '---'
+                endCaptures:
+                    0: name: 'comment.line.tad'
+                patterns:[
+                    { include: '#comment' }
+                    { include: '#strings' }
+                    
+                    # Parametros de entrada y Salida de función
+                    { include: '#design_section_main_interface__function_parameters' }
+                    { include: '#design_section_main_interface__res_function' }
+                    
+                    { include: '#equal_symbol' }
+                    { include: '#restriction_brackets' }
+                    {
+                        comment: 'Palabras clave del bloque de función'
+                        name: 'support.function.tad'
+                        match: '(?i)((?=\\s*)(?:complejidad|descripci[ó,o]n|aliasing)((?=\\s)|\:))'
+                    }
+                    # { # No me gusto que estén pintados "Pre" y "Post"
+                    #     comment: 'Palabras clave del bloque de función (pre y post)'
+                    #     name: 'markup.underline.tad'
+                    #     match: '(?i)((?=\\s*)(?:pre|post)((?=\\s)|\:))'
+                    # }                  
+                ]
+            }
+        ]
+    }
+    design_section_main_interface__function_parameters:{
+        comment: 'Parametros de función'
+        # match: '(in|out|inout)\ (.*?)\:(.+?(?=\,|\\(|\\)))'   # version sin parametros opcionales
+        match: '(in|out|inout|in\/out)\ (.*?)\:(.+?(?=\,|\\(|\\)))(\\((.+?)(,(.+?)|(?:))\\)|(?:))'  #1 hora despues...
+        captures:
+            1: name: 'support.function.tad'         # "in|out|inout"
+            # 2: name: 'variable.language.tad'      # nombre del parametro  # Me parecio demasiado color pintarla
+            3: name: 'storage.type.tad'             # tipo del parametro
+            5: name: 'storage.type.tad'             # primer parametro formal (opcional)
+            7: name: 'storage.type.tad'             # segundo parametro formal (demasiado opcional)
+    }
+    design_section_main_interface__res_function:{
+        comment: 'Resultado de función'
+        match: '\\s(->|↦)(\\sres)\:(.+?(?=\\n|\\(|\\)))(\\((.+?)(,(.+?)|(?:))\\)|(?:))'
+        captures:
+            1: name: 'variable.language'            # Flechita
+            2: name: 'entity.name.type.tad'         # nombre del parametro
+            3: name: 'storage.type.tad'             # tipo del parametro
+            5: name: 'storage.type.tad'             # primer parametro formal (opcional)
+            7: name: 'storage.type.tad'             # segundo parametro formal (demasiado opcional)
+    }
+    loop_keywords:{
+        comment: 'Ciclos y control para diseño'
+        name: 'keyword.control.conditional.tad'
+        match: '(?i)((\\b)(while|do|endWhile|end while|for|end for|endfor|do while|end if|endif|switch|end switch|endswitch|case|break|default|return)(\\b))'
+    }
+    operation_symbols:{
+        comment: 'Simbolos para la etapa de diseño'
+        name: 'keyword.control.tad'
+        match: '(\•|\◦|\\+|\\-|\β|\π|\≤|\≥|\&|\⊂|\⊆|\∈|\∩|\∪|\←|\\<\\-|\\*|\\-\\>|\→|\\<|\\>|\≠|\\=|!|\\/|\\|)'
+    }
+    programming_constants:{
+        comment: 'Constantes de la etapa de diseño'
+        name: 'constant.language.tad'
+        match: '\\b(?i)(null)\\b'
+    }
+    design_functions:{
+        comment: 'Highligting de funciones varias para diseño'
+        match: '((?:\\(|\ |\t|\\+|\-|\\.)|(\:\:))([A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=(\\())'
+        captures:
+            2: name: 'keyword.control.tad'
+            3: name: 'entity.name.function.tad'
     }
