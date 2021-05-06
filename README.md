@@ -77,6 +77,9 @@ Simbolo | Atajo
 σ   | \sigma
 ⟨   | \tuplaabrir
 ⟩   | \tuplacerrar
+Ω   | \omega
+ω   | \omega_2
+Θ   | \theta
 
 Ademas de la lista de simbolos se puede usar los snippets para insertar:
 - Esqueleto de `if • then • else • if`: solo con escribir `if` o `ifthen` para la version inline.

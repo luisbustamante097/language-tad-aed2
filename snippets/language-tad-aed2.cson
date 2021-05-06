@@ -117,6 +117,12 @@
     '\\←':
       'prefix': '\\gets'
       'body': '←'
+    '\\←alt':
+      'prefix': '\\ig'
+      'body': '←'
+    '\\→':
+      'prefix': '\\rarrow'
+      'body': '→'
     '\\≤':
       'prefix': '\\leq'
       'body': '≤'
@@ -135,6 +141,15 @@
     '\\⟩':
       'prefix': '\\tuplacerrar'
       'body': '⟩'
+    '\\Ω':
+      'prefix': '\\omega'
+      'body': 'Ω'
+    '\\ω':
+      'prefix': '\\omega_2'
+      'body': 'ω'
+    '\\Θ':
+      'prefix': '\\theta'
+      'body': 'Θ'
     '∨':
       'prefix': 'lor'
       'body': '∨'
@@ -252,6 +267,12 @@
     '←':
       'prefix': 'gets'
       'body': '←'
+    '←alt':
+      'prefix': 'ig'
+      'body': '←'
+    '→':
+      'prefix': 'rarrow'
+      'body': '→'
     '≤':
       'prefix': 'leq'
       'body': '≤'
@@ -270,6 +291,15 @@
     '⟩':
         'prefix': 'tuplacerrar'
         'body': '⟩'
+    'Ω':
+      'prefix': 'omega'
+      'body': 'Ω'
+    'ω':
+      'prefix': 'omega_2'
+      'body': 'ω'
+    'Θ':
+      'prefix': 'theta'
+      'body': 'Θ'
     'if Condition':
       'prefix': 'if'
       'body': 'if ${1:condicion} then\n\t${2:resultado}\nelse\n\t${3:sino}\nfi'
