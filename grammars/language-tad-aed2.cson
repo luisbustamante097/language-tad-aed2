@@ -246,6 +246,7 @@ repository:
             { include: '#arrays' }
             { include: '#functions' }
             { include: '#equal_symbol' }
+            { include: '#equal_obs_symbol' }
             { include: '#iff_symbol' }
             { include: '#logic_symbols' }
             { include: '#tupla_element' }
