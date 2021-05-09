@@ -509,7 +509,7 @@ repository:
             }
             {
                 comment: 'Bloque de implementación de función'
-                begin: '(?:^\\s+)((i)[A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=\\(|\ \\()'
+                begin: '(?:^\\s+)((i)[A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉\•\\=]+?)(?=\\(|\ \\()'
                 beginCaptures:
                     1: name: 'entity.name.function.tad'     #nombre de función
                     2: name: 'string.other.tad'          # "i" de implementación (opcional)
@@ -547,7 +547,7 @@ repository:
             }
             {
                 comment: 'Bloque de interfaz por cada función'
-                begin: '(?:^\\s+)([A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=\\(|\ \\()'
+                begin: '(?:^\\s+)([A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉\•\\=]+?)(?=\\(|\ \\()'
                 beginCaptures:
                     1: name: 'entity.name.function.tad'     #nombre de función
                 end: '---'
