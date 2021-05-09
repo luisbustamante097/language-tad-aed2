@@ -606,7 +606,7 @@ repository:
     operation_symbols:{
         comment: 'Simbolos para la etapa de diseño'
         name: 'keyword.control.tad'
-        match: '(\•|\◦|\\+|\\-|\β|\π|\≤|\≥|\&|\⊂|\⊆|\∈|\∩|\∪|\←|\\<\\-|\\*|\\-\\>|\→|\\<|\\>|\≠|\\=|!|\\/|\\|)'
+        match: '(\•|\◦|\\+|\\-|\β|\π|\≤|\≥|\&|\⊂|\⊆|\∈|\∩|\∪|\←|\\<\\-|\\*|\\-\\>|\→|\\<|\\>|\≠|\\=|!|\\/|\%|\\|)'
     }
     programming_constants:{
         comment: 'Constantes de la etapa de diseño'
