@@ -10,6 +10,12 @@ Aún sigo testeando que ande todo correctamente por lo que hay (muchísimos) bug
 ## Snippets
 - Solo con teclear `nueva interfaz` podrán tener una esqueleto de una interfaz de ejemplo para completar.
 - Para la etapa de codeo se tienen snippets para estructuras del paradigma imperativo como: `while do`, `for` y `switch`.
+- **(NUEVO)** Snippet simple para la declaración de funciones, solo con escribir `function` se generara el siguiente esqueleto:
+```vhdl
+function NuevaOP(param) 
+    // code
+end function
+```
 
 ---
 ---

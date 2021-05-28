@@ -514,3 +514,6 @@ Interfaz:
 			res ← ⟨0, 9⟩	// Ejemplo}
 		---
 '''
+    'Function (diseño)':
+      'prefix': 'function'
+      'body': 'function ${1:NuevaOP}(${2:param}) \n\t${3:// code}\nend function'
