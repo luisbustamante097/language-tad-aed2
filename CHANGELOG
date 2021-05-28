@@ -1,3 +1,11 @@
+1.0.1
+- Added "%" symbol for coding
+- Added "dot" symbol for function declaration
+- Changed "for" snippet to "forloop"
+- Added "function" template for declaring functions in design blocks (Check README to use)
+- Added "p->elem" symbol for using instead "(*p).elem" (c++ like)
+- Minor bugs resolved
+
 1.0.0
 - Added INTERFACE grammar!!! (and some useful snippets)
 - Fixed constants bug, fixed tupla's elements bug and deleted some non-necessary lines
