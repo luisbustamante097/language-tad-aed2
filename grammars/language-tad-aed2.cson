@@ -177,10 +177,6 @@ repository:
             0: name: 'punctuation.section.brackets.end.tad'
         patterns:[
             {
-            match: '^([0-9]+?)(?=\\])'
-            name: 'constant.numeric.tad'
-            }
-            {
                 comment: 'es necesario cuando hay una funcion adentro'
                 name: 'keyword.control.conditional.tad'
                 match: '\\['
@@ -192,6 +188,12 @@ repository:
             { include: '#constants' }
             { include: '#constants_aux' }
             { include: '#functions_symbols' }
+            { include: '#tupla_element' }
+            # Agregados para escribir código
+            { include: '#loop_keywords' }
+            { include: '#operation_symbols' }
+            { include: '#programming_constants' }
+            { include: '#design_functions' }
         ]
     }
     cross_symbol:{
@@ -228,7 +230,7 @@ repository:
     }
     function_name_declaration:{
         comment: "Aridad de Funciones (Nombre de funcion)"
-        begin: '(^(?:\t\t))(?!\/\/)([A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ ]+\:)'
+        begin: '(^(?:\t\t))(?!\/\/)([A-zÀ-ú0-9\_\?\#\ñ\Ø\\+\•\·\\-\≤\ \π\<\>\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+\:)'
         beginCaptures:
             0: name: 'entity.name.function.tad'
         end: '(?=\{)|(\n)'
