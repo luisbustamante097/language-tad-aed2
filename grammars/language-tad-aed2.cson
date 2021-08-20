@@ -142,7 +142,7 @@ repository:
     }
     functions:{
         comment: 'Highligting de nombres de funciones varias'
-        match: '(?:\\(|\ |\t|\\+|\-|)([A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=(\\(|\ \\())'
+        match: '(?:\\(|\ |\t|\\+|\-|)([A-zÀ-ú0-9\_\?\#\ñ\Ø\β\π\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+?)(?=(\\())'
         captures:
             1: name: 'entity.name.function.tad'
     }
@@ -252,12 +252,11 @@ repository:
             0: name: 'keyword.control.conditional.tad'
         patterns:[
             { include: '#comment' }
-            { include: '#constants' }
             { include: '#strings' }
+            { include: '#functions' }
             { include: '#constants' }
             { include: '#constants_aux' }
             { include: '#arrays' }
-            { include: '#functions' }
             { include: '#equal_symbol' }
             { include: '#equal_obs_symbol' }
             { include: '#iff_symbol' }
@@ -276,7 +275,7 @@ repository:
         begin: '(?i)((^|\t)REPRESENTACI[O|Ó|o|ó]N:)'
         beginCaptures:
             0: name: 'markup.bold.tad'
-        end: '(---)|(?=\⟩)\⟩((;))|(?=\⟩\n)|^$'  #se puede terminar con "---" o "⟩;"
+        end: '(---)|^$'  #se puede terminar con "---"
         endCaptures:
             1: name: 'comment.line.tad'
             2: name: 'comment.line.tad'
@@ -317,15 +316,7 @@ repository:
             }
             {
                 comment: 'Interior de tupla (arreglo_dimensionable de ...)'
-                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(arreglo_dimensionable)(?:.*de\ )(\\w+)'
-                captures:
-                    1: name: 'variable.language.tad'    # nombre de atributo
-                    2: name: 'storage.type.tad'         # "arreglo_dimensionable"
-                    3: name: 'storage.type.tad'         # tipo del array
-            }
-            {
-                comment: 'Interior de tupla (array de ...)'
-                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(array|arreglo)(?:.*de\ )(\\w+)'
+                match: '(?:(?:\\s+|\⟨)([A-zÀ-ú0-9\_\?\#\₀\₁\₂\₃\₄\₅\₆\₇\₈\₉]+))(?:\:\\s+)(arreglo[\_\ ]dimensionable|array|arreglo)(?:.*de\ )(\\w+)'
                 captures:
                     1: name: 'variable.language.tad'    # nombre de atributo
                     2: name: 'storage.type.tad'         # "array"
