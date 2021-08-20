@@ -48,61 +48,36 @@ apm install language-tad-aed2
 - **Windows**: Desde una ventana de Powershell o CMD pueden usar el mismo comando para Linux (Atom debe estar cerrado).
 
 ## Snippets para usar símbolos matemáticos
-Cargue la extensión con todos los simbolos que me parecieron necesarios para la construcción de TADs.
-Una lista de ellas con su correspondiente atajo es brindado en la siguiente tabla.
+Cargué la extensión con todos los símbolos que me parecieron necesarios para la construcción de TADs y para la parte de diseño.
+Una lista de ellas (con su correspondiente atajo) es brindado en la siguiente tabla. Nótese que se utiliza para todas el prefijo "\\" a modo de asimilar la notación de Latex.
 
-Simbolo | Atajo
---------|------
-∨   | \lor
-∨L  | \oluego
-∧   | \land
-∧L  | \yLuego
-¬   | \not
-∀   | \forall
-∃   | \exists
-∄   | \notexists
-⇒   | \implica
-⇒L  | \impluego
-↔   | \iff
-⇐⇒  | \iffalt
-∴   | \porlotanto
-⋂   | \genintersection
-⋃   | \genunion
-∩   | \intersection
-∪   | \union
-⊆   | \estaincluidooesigual
-⊂   | \estaincluido
-⊄   | \noestaincluido
-∈   | \in
-∉   | \notin
-ℕ   | \natural
-ℤ   | \entero
-ℚ   | \racional
-ℝ   | \real
-ℂ   | \complejo
-×   | \cross
-∞   | \infinito
-↦   | \funcion
-≡   | \equivale
-≠   | \notequal
-Ø   | \emptyset
-β   | \beta
-α   | \alpha
-•   | \dot
-◦   | \emptydot
-π   | \pi
-←   | \gets
-←   | \ig (alternativa)
-→   | \rarrow
-≤   | \leq
-≥   | \geq
-κ   | \kappa
-σ   | \sigma
-⟨   | \tuplaabrir
-⟩   | \tuplacerrar
-Ω   | \omega
-ω   | \omega_2
-Θ   | \theta
+Símbolo | Atajo|Símbolo | Atajo
+--------|------|--------|------
+∨   | \lor                      | ×   | \cross
+∨L  | \oLuego                   | ∞   | \infty
+∧   | \land                     | ↦   | \function
+∧L  | \yLuego                   | ≡   | \equiv
+¬   | \not                      | ≠   | \notequal
+∀   | \forall                   | Ø   | \emptyset
+∃   | \exists                   | β   | \beta
+∄   | \notexists                | α   | \alpha
+⇒   | \implies                  | •   | \dot
+⇒L  | \impluego                 | ◦   | \emptydot
+↔   | \iff                      | π   | \pi
+⇐⇒  | \iffalt                   | ←   | \gets o \ig o ("<-" + TabKey)
+∴   | \porlotanto               | →   | \rarrow
+∩   | \cap o \intersection      | ≤   | \leq
+∪   | \cup o \union             | ≥   | \geq
+⊆   | \subseteq                 | κ   | \kappa
+⊂   | \subset                   | σ   | \sigma
+⊄   | \notsubset                | ⟨⟩  | \tupla
+∈   | \in                       | Ω   | \omega
+∉   | \notin                    | ω   | \omega_2
+ℕ   | \natural                  | Θ   | \theta  
+ℤ   | \entero                   |
+ℚ   | \racional                 | 
+ℝ   | \real                     | 
+ℂ   | \complejo                 | 
 
 Ademas de la lista de simbolos se puede usar los snippets para insertar:
 - Esqueleto de `if • then • else • if`: solo con escribir `if` o `ifthen` para la version inline.
