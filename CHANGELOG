@@ -1,3 +1,11 @@
+1.0.2
+- Some snippets changed:
+    - not used symbols removed ("\genintersection" and "\genunion")
+    - spanish snippets were changed to Latex-like notation (eg. \estaincluido -> \subset)
+    - "\tuplaabrir" and "\tuplacerrar" changed to only one snippet named "\tupla" with both symbols
+- Updated README for better understanding
+- Minor bugs resolved
+
 1.0.1
 - Added "%" symbol for coding
 - Added "dot" symbol for function declaration
